@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  ipsec-vpn:
+    image: hwdsl2/ipsec-vpn-server
+    container_name: ipsec-vpn
+    restart: always
+    privileged: true
+    ports:
+    - 500:500/udp
+    - 4500:4500/udp
+    environment:
+    - VPN_IPSEC_PSK=put-you-ipsec-here
+    - VPN_USER=username
+    - VPN_PASSWORD=password
+    - VPN_DNS_SRV1=8.8.8.8
+    - VPN_DNS_SRV2=4.2.2.2
+    - VPN_ADDL_USERS=adduser
+    - VPN_ADDL_PASSWORDS=addpass
