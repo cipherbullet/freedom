@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  tinyproxy:
+    container_name: tinyproxy
+    build: .
+    restart: unless-stopped
+    ports:
+      - 1288:8888
+    volumes:
+      - ./etc:/etc/tinyproxy
